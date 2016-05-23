@@ -64,6 +64,35 @@
 #pragma mark - Properties
 
 @synthesize delegate;
+@synthesize toolbarBackgroundColor;
+@synthesize toolbarTintColor;
+
+#pragma mark - ThumbsViewController methods
+
+- (void)setToolbarBackgroundColor:(UIColor *)newToolbarBackgroundColor
+{
+    toolbarBackgroundColor = newToolbarBackgroundColor;
+    [self updateToolbarColors];
+}
+
+- (void)setToolbarTintColor:(UIColor *)newToolbarTintColor
+{
+    toolbarTintColor = newToolbarTintColor;
+    [self updateToolbarColors];
+}
+
+- (void)updateToolbarColors
+{
+    if (toolbarBackgroundColor != nil)
+    {
+        mainToolbar.backgroundColor = toolbarBackgroundColor;
+    }
+    
+    if (toolbarBackgroundColor != nil)
+    {
+        mainToolbar.tintColor = toolbarTintColor;
+    }
+}
 
 #pragma mark - UIViewController methods
 
@@ -112,7 +141,7 @@
 		}
 	}
 
-	NSString *toolbarTitle = [document.fileName stringByDeletingPathExtension];
+	NSString *toolbarTitle = document.documentTitle;
 
 	CGRect toolbarRect = scrollViewRect; // Toolbar frame
 	toolbarRect.size.height = TOOLBAR_HEIGHT; // Default toolbar height
@@ -152,6 +181,8 @@
 	{
 		[theThumbsView setThumbSize:CGSizeMake(PAGE_THUMB_LARGE, PAGE_THUMB_LARGE)];
 	}
+    
+    [self updateToolbarColors];
 }
 
 - (void)viewWillAppear:(BOOL)animated

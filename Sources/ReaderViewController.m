@@ -36,6 +36,10 @@
 
 @interface ReaderViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate, MFMailComposeViewControllerDelegate, UIDocumentInteractionControllerDelegate,
 									ReaderMainToolbarDelegate, ReaderMainPagebarDelegate, ReaderContentViewDelegate, ThumbsViewControllerDelegate>
+
+//@property (nonatomic, strong, readwrite) ReaderMainToolbar *mainToolbar;
+//@property (nonatomic, strong, readwrite) ReaderMainPagebar *mainPagebar;
+
 @end
 
 @implementation ReaderViewController
@@ -82,6 +86,10 @@
 #pragma mark - Properties
 
 @synthesize delegate;
+@synthesize toolbarBackgroundColor;
+@synthesize toolbarTintColor;
+//@synthesize mainToolbar;
+//@synthesize mainPagebar;
 
 #pragma mark - ReaderViewController methods
 
@@ -284,6 +292,31 @@
 	}
 }
 
+- (void)setToolbarBackgroundColor:(UIColor *)newToolbarBackgroundColor
+{
+    toolbarBackgroundColor = newToolbarBackgroundColor;
+    [self updateToolbarColors];
+}
+
+- (void)setToolbarTintColor:(UIColor *)newToolbarTintColor
+{
+    toolbarTintColor = newToolbarTintColor;
+    [self updateToolbarColors];
+}
+
+- (void)updateToolbarColors
+{
+    if (toolbarBackgroundColor != nil)
+    {
+        mainToolbar.backgroundColor = toolbarBackgroundColor;
+    }
+    
+    if (toolbarBackgroundColor != nil)
+    {
+        mainToolbar.tintColor = toolbarTintColor;
+    }
+}
+
 #pragma mark - UIViewController methods
 
 - (instancetype)initWithReaderDocument:(ReaderDocument *)object
@@ -364,6 +397,8 @@
 	mainPagebar = [[ReaderMainPagebar alloc] initWithFrame:pagebarRect document:document]; // ReaderMainPagebar
 	mainPagebar.delegate = self; // ReaderMainPagebarDelegate
 	[self.view addSubview:mainPagebar];
+    
+    [self updateToolbarColors];
 
 	if (fakeStatusBar != nil) [self.view addSubview:fakeStatusBar]; // Add status bar background view
 
@@ -728,6 +763,16 @@
 	ThumbsViewController *thumbsViewController = [[ThumbsViewController alloc] initWithReaderDocument:document];
 
 	thumbsViewController.title = self.title; thumbsViewController.delegate = self; // ThumbsViewControllerDelegate
+    
+    if (toolbarBackgroundColor != nil)
+    {
+        thumbsViewController.toolbarBackgroundColor = toolbarBackgroundColor;
+    }
+    
+    if (toolbarBackgroundColor != nil)
+    {
+        thumbsViewController.toolbarTintColor = toolbarTintColor;
+    }
 
 	thumbsViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 	thumbsViewController.modalPresentationStyle = UIModalPresentationFullScreen;

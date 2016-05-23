@@ -27,6 +27,11 @@
 #import "ThumbsMainToolbar.h"
 
 @implementation ThumbsMainToolbar
+{
+    NSMutableArray<UIButton *> *toolbarButtons;
+    UILabel *titleLabel;
+    UISegmentedControl *showControl;
+}
 
 #pragma mark - Constants
 
@@ -60,6 +65,8 @@
 {
 	if ((self = [super initWithFrame:frame]))
 	{
+        toolbarButtons = [NSMutableArray array];
+        
 		CGFloat viewWidth = self.bounds.size.width; // Toolbar view width
 
 #if (READER_FLAT_UI == TRUE) // Option
@@ -95,6 +102,7 @@
 		doneButton.exclusiveTouch = YES;
 
 		[self addSubview:doneButton]; //leftButtonX += (doneButtonWidth + buttonSpacing);
+        [toolbarButtons addObject:doneButton];
 
 		titleX += (doneButtonWidth + buttonSpacing); titleWidth -= (doneButtonWidth + buttonSpacing);
 
@@ -108,7 +116,7 @@
 
 		BOOL useTint = [self respondsToSelector:@selector(tintColor)]; // iOS 7 and up
 
-		UISegmentedControl *showControl = [[UISegmentedControl alloc] initWithItems:buttonItems];
+		showControl = [[UISegmentedControl alloc] initWithItems:buttonItems];
 		showControl.frame = CGRectMake(showControlX, BUTTON_Y, SHOW_CONTROL_WIDTH, BUTTON_HEIGHT);
 		showControl.tintColor = (useTint ? [UIColor blackColor] : [UIColor colorWithWhite:0.8f alpha:1.0f]);
 		showControl.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
@@ -129,7 +137,7 @@
 		{
 			CGRect titleRect = CGRectMake(titleX, BUTTON_Y, titleWidth, TITLE_HEIGHT);
 
-			UILabel *titleLabel = [[UILabel alloc] initWithFrame:titleRect];
+			titleLabel = [[UILabel alloc] initWithFrame:titleRect];
 
 			titleLabel.textAlignment = NSTextAlignmentCenter;
 			titleLabel.font = [UIFont systemFontOfSize:TITLE_FONT_SIZE];
@@ -150,6 +158,31 @@
 	}
 
 	return self;
+}
+
+- (void)setTintColor:(UIColor *)tintColor
+{
+    [super setTintColor:tintColor];
+    [self updateToolbarTintColor];
+}
+
+- (void)updateToolbarTintColor
+{
+    for (UIButton *toolbarButton in toolbarButtons)
+    {
+        UIImage *buttonImage = [toolbarButton imageForState:UIControlStateNormal];
+        buttonImage = [buttonImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [toolbarButton setImage:buttonImage forState:UIControlStateNormal];
+        [toolbarButton setTitleColor:self.tintColor forState:UIControlStateNormal];
+        
+        buttonImage = [toolbarButton imageForState:UIControlStateSelected];
+        buttonImage = [buttonImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [toolbarButton setImage:buttonImage forState:UIControlStateSelected];
+        [toolbarButton setTitleColor:[UIColor grayColor] forState:UIControlStateSelected];
+    }
+    
+    titleLabel.textColor = self.tintColor;
+    showControl.tintColor = self.tintColor;
 }
 
 #pragma mark - UISegmentedControl action methods

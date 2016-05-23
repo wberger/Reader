@@ -57,6 +57,8 @@
 	NSString *_filePath;
 
 	NSURL *_fileURL;
+    
+    NSString *_documentTitle;
 }
 
 #pragma mark - Properties
@@ -70,6 +72,7 @@
 @synthesize bookmarks = _bookmarks;
 @synthesize password = _password;
 @synthesize filePath = _filePath;
+@synthesize documentTitle = _documentTitle;
 @dynamic fileName, fileURL;
 @dynamic canEmail, canExport, canPrint;
 
@@ -241,6 +244,13 @@
 	}
 
 	return self;
+}
+
+- (NSString *)documentTitle
+{
+    if (_documentTitle == nil) _documentTitle = self.fileName;
+    
+    return _documentTitle;
 }
 
 - (NSString *)fileName

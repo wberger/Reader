@@ -33,8 +33,11 @@
 {
 	UIButton *markButton;
 
-	UIImage *markImageN;
-	UIImage *markImageY;
+//	UIImage *markImageN;
+//	UIImage *markImageY;
+    
+    NSMutableArray<UIButton *> *toolbarButtons;
+    UILabel *titleLabel;
 }
 
 #pragma mark - Constants
@@ -86,6 +89,8 @@
 		CGFloat titleX = BUTTON_X; CGFloat titleWidth = (viewWidth - (titleX + titleX));
 
 		CGFloat leftButtonX = BUTTON_X; // Left-side button start X position
+        
+        toolbarButtons = [NSMutableArray array];
 
 #if (READER_STANDALONE == FALSE) // Option
 
@@ -107,6 +112,7 @@
 		doneButton.exclusiveTouch = YES;
 
 		[self addSubview:doneButton]; leftButtonX += (doneButtonWidth + buttonSpacing);
+        [toolbarButtons addObject:doneButton];
 
 		titleX += (doneButtonWidth + buttonSpacing); titleWidth -= (doneButtonWidth + buttonSpacing);
 
@@ -125,6 +131,7 @@
 		thumbsButton.exclusiveTouch = YES;
 
 		[self addSubview:thumbsButton]; //leftButtonX += (iconButtonWidth + buttonSpacing);
+        [toolbarButtons addObject:thumbsButton];
 
 		titleX += (iconButtonWidth + buttonSpacing); titleWidth -= (iconButtonWidth + buttonSpacing);
 
@@ -138,7 +145,8 @@
 
 		UIButton *flagButton = [UIButton buttonWithType:UIButtonTypeCustom];
 		flagButton.frame = CGRectMake(rightButtonX, BUTTON_Y, iconButtonWidth, BUTTON_HEIGHT);
-		//[flagButton setImage:[UIImage imageNamed:@"Reader-Mark-N"] forState:UIControlStateNormal];
+		[flagButton setImage:[UIImage imageNamed:@"Reader-Mark-N"] forState:UIControlStateNormal];
+        [flagButton setImage:[UIImage imageNamed:@"Reader-Mark-Y"] forState:UIControlStateSelected];
 		[flagButton addTarget:self action:@selector(markButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 		[flagButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
 		[flagButton setBackgroundImage:buttonN forState:UIControlStateNormal];
@@ -147,11 +155,12 @@
 		flagButton.exclusiveTouch = YES;
 
 		[self addSubview:flagButton]; titleWidth -= (iconButtonWidth + buttonSpacing);
+        [toolbarButtons addObject:flagButton];
 
 		markButton = flagButton; markButton.enabled = NO; markButton.tag = NSIntegerMin;
 
-		markImageN = [UIImage imageNamed:@"Reader-Mark-N"]; // N image
-		markImageY = [UIImage imageNamed:@"Reader-Mark-Y"]; // Y image
+//		markImageN = [UIImage imageNamed:@"Reader-Mark-N"]; // N image
+//		markImageY = [UIImage imageNamed:@"Reader-Mark-Y"]; // Y image
 
 #endif // end of READER_BOOKMARKS Option
 
@@ -176,6 +185,7 @@
 					emailButton.exclusiveTouch = YES;
 
 					[self addSubview:emailButton]; titleWidth -= (iconButtonWidth + buttonSpacing);
+                    [toolbarButtons addObject:emailButton];
 				}
 			}
 		}
@@ -199,6 +209,7 @@
 				printButton.exclusiveTouch = YES;
 
 				[self addSubview:printButton]; titleWidth -= (iconButtonWidth + buttonSpacing);
+                [toolbarButtons addObject:printButton];
 			}
 		}
 
@@ -217,13 +228,14 @@
 			exportButton.exclusiveTouch = YES;
 
 			[self addSubview:exportButton]; titleWidth -= (iconButtonWidth + buttonSpacing);
+            [toolbarButtons addObject:exportButton];
 		}
 
 		if (largeDevice == YES) // Show document filename in toolbar
 		{
 			CGRect titleRect = CGRectMake(titleX, BUTTON_Y, titleWidth, TITLE_HEIGHT);
 
-			UILabel *titleLabel = [[UILabel alloc] initWithFrame:titleRect];
+			titleLabel = [[UILabel alloc] initWithFrame:titleRect];
 
 			titleLabel.textAlignment = NSTextAlignmentCenter;
 			titleLabel.font = [UIFont systemFontOfSize:TITLE_FONT_SIZE];
@@ -233,7 +245,7 @@
 			titleLabel.backgroundColor = [UIColor clearColor];
 			titleLabel.adjustsFontSizeToFitWidth = YES;
 			titleLabel.minimumScaleFactor = 0.75f;
-			titleLabel.text = [document.fileName stringByDeletingPathExtension];
+            titleLabel.text = document.documentTitle;
 #if (READER_FLAT_UI == FALSE) // Option
 			titleLabel.shadowColor = [UIColor colorWithWhite:0.75f alpha:1.0f];
 			titleLabel.shadowOffset = CGSizeMake(0.0f, 1.0f);
@@ -254,15 +266,19 @@
 	{
 		if (self.hidden == NO) // Only if toolbar is visible
 		{
-			UIImage *image = (state ? markImageY : markImageN);
-
-			[markButton setImage:image forState:UIControlStateNormal];
+            markButton.selected = state;
+            markButton.tintColor = state ? [UIColor grayColor] : self.tintColor;
+//			UIImage *image = (state ? markImageY : markImageN);
+//
+//			[markButton setImage:image forState:UIControlStateNormal];
 		}
 
 		markButton.tag = state; // Update bookmarked state tag
 	}
 
 	if (markButton.enabled == NO) markButton.enabled = YES;
+    
+//    [self updateToolbarTintColor];
 
 #endif // end of READER_BOOKMARKS Option
 }
@@ -274,13 +290,17 @@
 	if (markButton.tag != NSIntegerMin) // Valid tag
 	{
 		BOOL state = markButton.tag; // Bookmarked state
-
-		UIImage *image = (state ? markImageY : markImageN);
-
-		[markButton setImage:image forState:UIControlStateNormal];
+        
+        markButton.selected = state;
+        markButton.tintColor = state ? [UIColor grayColor] : self.tintColor;
+//		UIImage *image = (state ? markImageY : markImageN);
+//
+//		[markButton setImage:image forState:UIControlStateNormal];
 	}
 
 	if (markButton.enabled == NO) markButton.enabled = YES;
+    
+//    [self updateToolbarTintColor];
 
 #endif // end of READER_BOOKMARKS Option
 }
@@ -319,6 +339,30 @@
 			completion:NULL
 		];
 	}
+}
+
+- (void)setTintColor:(UIColor *)tintColor
+{
+    [super setTintColor:tintColor];
+    [self updateToolbarTintColor];
+}
+
+- (void)updateToolbarTintColor
+{
+    for (UIButton *toolbarButton in toolbarButtons)
+    {
+        UIImage *buttonImage = [toolbarButton imageForState:UIControlStateNormal];
+        buttonImage = [buttonImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [toolbarButton setImage:buttonImage forState:UIControlStateNormal];
+        [toolbarButton setTitleColor:self.tintColor forState:UIControlStateNormal];
+        
+        buttonImage = [toolbarButton imageForState:UIControlStateSelected];
+        buttonImage = [buttonImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [toolbarButton setImage:buttonImage forState:UIControlStateSelected];
+        [toolbarButton setTitleColor:[UIColor grayColor] forState:UIControlStateSelected];
+    }
+    
+    titleLabel.textColor = self.tintColor;
 }
 
 #pragma mark - UIButton action methods

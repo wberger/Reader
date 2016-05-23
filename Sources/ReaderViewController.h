@@ -26,6 +26,8 @@
 #import <UIKit/UIKit.h>
 
 #import "ReaderDocument.h"
+#import "ReaderMainToolbar.h"
+#import "ReaderMainPagebar.h"
 
 @class ReaderViewController;
 
@@ -40,6 +42,11 @@
 @interface ReaderViewController : UIViewController
 
 @property (nonatomic, weak, readwrite) id <ReaderViewControllerDelegate> delegate;
+
+//@property (nonatomic, strong, readonly) ReaderMainToolbar *mainToolbar;
+//@property (nonatomic, strong, readonly) ReaderMainPagebar *mainPagebar;
+@property (nonatomic, strong, readwrite) UIColor *toolbarBackgroundColor;
+@property (nonatomic, strong, readwrite) UIColor *toolbarTintColor;
 
 - (instancetype)initWithReaderDocument:(ReaderDocument *)object;
 

@@ -45,6 +45,9 @@
 
 @property (nonatomic, weak, readwrite) id <ThumbsViewControllerDelegate> delegate;
 
+@property (nonatomic, strong, readwrite) UIColor *toolbarBackgroundColor;
+@property (nonatomic, strong, readwrite) UIColor *toolbarTintColor;
+
 - (instancetype)initWithReaderDocument:(ReaderDocument *)object;
 
 @end
