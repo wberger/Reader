@@ -43,9 +43,9 @@
 @property (nonatomic, readonly) BOOL canExport;
 @property (nonatomic, readonly) BOOL canPrint;
 
-+ (ReaderDocument *)withDocumentFilePath:(NSString *)filePath password:(NSString *)phrase;
++ (instancetype)withDocumentFilePath:(NSString *)filePath password:(NSString *)phrase;
 
-+ (ReaderDocument *)unarchiveFromFileName:(NSString *)filePath password:(NSString *)phrase;
++ (instancetype)unarchiveFromFileName:(NSString *)filePath password:(NSString *)phrase;
 
 - (instancetype)initWithFilePath:(NSString *)filePath password:(NSString *)phrase;
 

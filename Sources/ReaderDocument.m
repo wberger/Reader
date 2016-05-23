@@ -124,7 +124,7 @@
 	return [archivePath stringByAppendingPathComponent:archiveName]; // "{archivePath}/'fileName'.plist"
 }
 
-+ (ReaderDocument *)unarchiveFromFileName:(NSString *)filePath password:(NSString *)phrase
++ (instancetype)unarchiveFromFileName:(NSString *)filePath password:(NSString *)phrase
 {
 	ReaderDocument *document = nil; // ReaderDocument object
 
@@ -151,7 +151,7 @@
 	return document;
 }
 
-+ (ReaderDocument *)withDocumentFilePath:(NSString *)filePath password:(NSString *)phrase
++ (instancetype)withDocumentFilePath:(NSString *)filePath password:(NSString *)phrase
 {
 	ReaderDocument *document = nil; // ReaderDocument object
 
