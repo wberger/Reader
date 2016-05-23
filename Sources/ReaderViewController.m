@@ -502,24 +502,19 @@
 	return YES;
 }
 
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
-	if (userInterfaceIdiom == UIUserInterfaceIdiomPad) if (printInteraction != nil) [printInteraction dismissAnimated:NO];
-
-	ignoreDidScroll = YES;
+    if (userInterfaceIdiom == UIUserInterfaceIdiomPad) if (printInteraction != nil) [printInteraction dismissAnimated:NO];
 }
 
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration
+- (void)viewDidLayoutSubviews
 {
-	if (CGSizeEqualToSize(theScrollView.contentSize, CGSizeZero) == false)
-	{
-		[self updateContentViews:theScrollView]; lastAppearSize = CGSizeZero;
-	}
-}
-
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-	ignoreDidScroll = NO;
+    [super viewDidLayoutSubviews];
+    
+    if (CGSizeEqualToSize(theScrollView.contentSize, CGSizeZero) == false)
+    {
+        [self updateContentViews:theScrollView]; lastAppearSize = CGSizeZero;
+    }
 }
 
 - (void)didReceiveMemoryWarning
