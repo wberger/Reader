@@ -111,7 +111,11 @@
 		CGFloat showControlX = (viewWidth - (SHOW_CONTROL_WIDTH + buttonSpacing));
 
 		UIImage *thumbsImage = [UIImage imageNamed:@"Reader-Thumbs"];
+        thumbsImage.accessibilityLabel = NSLocalizedString(@"Show all pages", @"segment");
+        
 		UIImage *bookmarkImage = [UIImage imageNamed:@"Reader-Mark-Y"];
+        bookmarkImage.accessibilityLabel = NSLocalizedString(@"Show bookmarked pages", @"segment");
+        
 		NSArray *buttonItems = [NSArray arrayWithObjects:thumbsImage, bookmarkImage, nil];
 
 		BOOL useTint = [self respondsToSelector:@selector(tintColor)]; // iOS 7 and up

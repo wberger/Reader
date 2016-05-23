@@ -129,6 +129,7 @@
 		thumbsButton.autoresizingMask = UIViewAutoresizingNone;
 		//thumbsButton.backgroundColor = [UIColor grayColor];
 		thumbsButton.exclusiveTouch = YES;
+        thumbsButton.accessibilityLabel = NSLocalizedString(@"Show page overview", @"button");
 
 		[self addSubview:thumbsButton]; //leftButtonX += (iconButtonWidth + buttonSpacing);
         [toolbarButtons addObject:thumbsButton];
@@ -153,6 +154,7 @@
 		flagButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
 		//flagButton.backgroundColor = [UIColor grayColor];
 		flagButton.exclusiveTouch = YES;
+        flagButton.accessibilityLabel = NSLocalizedString(@"Bookmark page", @"button");
 
 		[self addSubview:flagButton]; titleWidth -= (iconButtonWidth + buttonSpacing);
         [toolbarButtons addObject:flagButton];
@@ -183,6 +185,7 @@
 					emailButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
 					//emailButton.backgroundColor = [UIColor grayColor];
 					emailButton.exclusiveTouch = YES;
+                    emailButton.accessibilityLabel = NSLocalizedString(@"Send document as e-Mail", @"button");
 
 					[self addSubview:emailButton]; titleWidth -= (iconButtonWidth + buttonSpacing);
                     [toolbarButtons addObject:emailButton];
@@ -207,6 +210,7 @@
 				printButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
 				//printButton.backgroundColor = [UIColor grayColor];
 				printButton.exclusiveTouch = YES;
+                printButton.accessibilityLabel = NSLocalizedString(@"Print document", @"button");
 
 				[self addSubview:printButton]; titleWidth -= (iconButtonWidth + buttonSpacing);
                 [toolbarButtons addObject:printButton];
@@ -226,6 +230,7 @@
 			exportButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
 			//exportButton.backgroundColor = [UIColor grayColor];
 			exportButton.exclusiveTouch = YES;
+            exportButton.accessibilityLabel = NSLocalizedString(@"Export document", @"button");
 
 			[self addSubview:exportButton]; titleWidth -= (iconButtonWidth + buttonSpacing);
             [toolbarButtons addObject:exportButton];
