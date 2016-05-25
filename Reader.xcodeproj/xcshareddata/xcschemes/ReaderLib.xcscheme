@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CEA5B2A81CF5A3B4002D7C01"
+               BuildableName = "ReaderTests.xctest"
+               BlueprintName = "ReaderTests"
+               ReferencedContainer = "container:Reader.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "CEA5B2B71CF5A43C002D7C01"
+            BuildableName = "libReaderLib.a"
+            BlueprintName = "ReaderLib"
+            ReferencedContainer = "container:Reader.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

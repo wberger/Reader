@@ -97,6 +97,7 @@
 		CEA5B2D31CF5A486002D7C01 /* ReaderThumbsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB730A141FC0B1003524C3 /* ReaderThumbsView.m */; };
 		CEA5B2D41CF5A486002D7C01 /* ReaderThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB730C141FC0B1003524C3 /* ReaderThumbView.m */; };
 		CEA5B2D51CF5A486002D7C01 /* UIXToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 455C7890142687CA0053D73B /* UIXToolbarView.m */; };
+		CEA5B2D61CF5A59D002D7C01 /* libReaderLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA5B2B81CF5A43C002D7C01 /* libReaderLib.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,6 +249,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA5B2D61CF5A59D002D7C01 /* libReaderLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
