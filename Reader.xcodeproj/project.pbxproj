@@ -76,7 +76,50 @@
 		45D9843C1C501B0300ADFD5E /* Reader-Mark-Y@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D984341C501B0300ADFD5E /* Reader-Mark-Y@3x.png */; };
 		45D9843D1C501B0300ADFD5E /* Reader-Print@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D984351C501B0300ADFD5E /* Reader-Print@3x.png */; };
 		45D9843E1C501B0300ADFD5E /* Reader-Thumbs@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D984361C501B0300ADFD5E /* Reader-Thumbs@3x.png */; };
+		CEA5B2AC1CF5A3B4002D7C01 /* ReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA5B2AB1CF5A3B4002D7C01 /* ReaderTests.m */; };
+		CEA5B2C21CF5A486002D7C01 /* ReaderConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB72F0141FC0B1003524C3 /* ReaderConstants.m */; };
+		CEA5B2C31CF5A486002D7C01 /* ReaderDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB72F8141FC0B1003524C3 /* ReaderDocument.m */; };
+		CEA5B2C41CF5A486002D7C01 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB730E141FC0B1003524C3 /* ReaderViewController.m */; };
+		CEA5B2C51CF5A486002D7C01 /* ReaderMainToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB72FC141FC0B1003524C3 /* ReaderMainToolbar.m */; };
+		CEA5B2C61CF5A486002D7C01 /* ReaderMainPagebar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB72FA141FC0B1003524C3 /* ReaderMainPagebar.m */; };
+		CEA5B2C71CF5A486002D7C01 /* ReaderContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB72F6141FC0B1003524C3 /* ReaderContentView.m */; };
+		CEA5B2C81CF5A486002D7C01 /* ReaderContentPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB72F2141FC0B1003524C3 /* ReaderContentPage.m */; };
+		CEA5B2C91CF5A486002D7C01 /* ReaderContentTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB72F4141FC0B1003524C3 /* ReaderContentTile.m */; };
+		CEA5B2CA1CF5A486002D7C01 /* ThumbsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB7312141FC0B1003524C3 /* ThumbsViewController.m */; };
+		CEA5B2CB1CF5A486002D7C01 /* ThumbsMainToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB7310141FC0B1003524C3 /* ThumbsMainToolbar.m */; };
+		CEA5B2CC1CF5A486002D7C01 /* CGPDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB72EE141FC0B1003524C3 /* CGPDFDocument.m */; };
+		CEA5B2CD1CF5A486002D7C01 /* ReaderDocumentOutline.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D5ADA21610EADC00706B9A /* ReaderDocumentOutline.m */; };
+		CEA5B2CE1CF5A486002D7C01 /* ReaderThumbRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB7308141FC0B1003524C3 /* ReaderThumbRequest.m */; };
+		CEA5B2CF1CF5A486002D7C01 /* ReaderThumbCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB7300141FC0B1003524C3 /* ReaderThumbCache.m */; };
+		CEA5B2D01CF5A486002D7C01 /* ReaderThumbQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB7304141FC0B1003524C3 /* ReaderThumbQueue.m */; };
+		CEA5B2D11CF5A486002D7C01 /* ReaderThumbFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB7302141FC0B1003524C3 /* ReaderThumbFetch.m */; };
+		CEA5B2D21CF5A486002D7C01 /* ReaderThumbRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB7306141FC0B1003524C3 /* ReaderThumbRender.m */; };
+		CEA5B2D31CF5A486002D7C01 /* ReaderThumbsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB730A141FC0B1003524C3 /* ReaderThumbsView.m */; };
+		CEA5B2D41CF5A486002D7C01 /* ReaderThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB730C141FC0B1003524C3 /* ReaderThumbView.m */; };
+		CEA5B2D51CF5A486002D7C01 /* UIXToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 455C7890142687CA0053D73B /* UIXToolbarView.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CEA5B2AE1CF5A3B4002D7C01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D6058900D05DD3D006BFB54;
+			remoteInfo = Reader;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CEA5B2B61CF5A43C002D7C01 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -181,6 +224,10 @@
 		45D984351C501B0300ADFD5E /* Reader-Print@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Reader-Print@3x.png"; path = "Graphics/Reader-Print@3x.png"; sourceTree = "<group>"; };
 		45D984361C501B0300ADFD5E /* Reader-Thumbs@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Reader-Thumbs@3x.png"; path = "Graphics/Reader-Thumbs@3x.png"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Reader-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Reader-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		CEA5B2A91CF5A3B4002D7C01 /* ReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA5B2AB1CF5A3B4002D7C01 /* ReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReaderTests.m; sourceTree = "<group>"; };
+		CEA5B2AD1CF5A3B4002D7C01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEA5B2B81CF5A43C002D7C01 /* libReaderLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReaderLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +241,20 @@
 				450A670411D27B9D00014BF5 /* QuartzCore.framework in Frameworks */,
 				45BD5AFE13AE721A00D6FE97 /* MessageUI.framework in Frameworks */,
 				458DDFD7140D45FA00C5DA94 /* ImageIO.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEA5B2A61CF5A3B4002D7C01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEA5B2B51CF5A43C002D7C01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +278,8 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* Reader.app */,
+				CEA5B2A91CF5A3B4002D7C01 /* ReaderTests.xctest */,
+				CEA5B2B81CF5A43C002D7C01 /* libReaderLib.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -229,6 +292,8 @@
 				29B97315FDCFA39411CA2CEA /* Support Files */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				450A66D911D27B5800014BF5 /* Graphics */,
+				CEA5B2AA1CF5A3B4002D7C01 /* ReaderTests */,
+				CEA5B2B91CF5A43C002D7C01 /* ReaderLib */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -394,6 +459,22 @@
 			name = Support;
 			sourceTree = "<group>";
 		};
+		CEA5B2AA1CF5A3B4002D7C01 /* ReaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				CEA5B2AB1CF5A3B4002D7C01 /* ReaderTests.m */,
+				CEA5B2AD1CF5A3B4002D7C01 /* Info.plist */,
+			);
+			path = ReaderTests;
+			sourceTree = "<group>";
+		};
+		CEA5B2B91CF5A43C002D7C01 /* ReaderLib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ReaderLib;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -414,6 +495,41 @@
 			productReference = 1D6058910D05DD3D006BFB54 /* Reader.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CEA5B2A81CF5A3B4002D7C01 /* ReaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEA5B2B31CF5A3B4002D7C01 /* Build configuration list for PBXNativeTarget "ReaderTests" */;
+			buildPhases = (
+				CEA5B2A51CF5A3B4002D7C01 /* Sources */,
+				CEA5B2A61CF5A3B4002D7C01 /* Frameworks */,
+				CEA5B2A71CF5A3B4002D7C01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEA5B2AF1CF5A3B4002D7C01 /* PBXTargetDependency */,
+			);
+			name = ReaderTests;
+			productName = ReaderTests;
+			productReference = CEA5B2A91CF5A3B4002D7C01 /* ReaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CEA5B2B71CF5A43C002D7C01 /* ReaderLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEA5B2BE1CF5A43C002D7C01 /* Build configuration list for PBXNativeTarget "ReaderLib" */;
+			buildPhases = (
+				CEA5B2B41CF5A43C002D7C01 /* Sources */,
+				CEA5B2B51CF5A43C002D7C01 /* Frameworks */,
+				CEA5B2B61CF5A43C002D7C01 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReaderLib;
+			productName = ReaderLib;
+			productReference = CEA5B2B81CF5A43C002D7C01 /* libReaderLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -421,6 +537,15 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0720;
+				TargetAttributes = {
+					CEA5B2A81CF5A3B4002D7C01 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 1D6058900D05DD3D006BFB54;
+					};
+					CEA5B2B71CF5A43C002D7C01 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Reader" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -437,6 +562,8 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* Reader */,
+				CEA5B2A81CF5A3B4002D7C01 /* ReaderTests */,
+				CEA5B2B71CF5A43C002D7C01 /* ReaderLib */,
 			);
 		};
 /* End PBXProject section */
@@ -488,6 +615,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEA5B2A71CF5A3B4002D7C01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -522,7 +656,50 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEA5B2A51CF5A3B4002D7C01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEA5B2AC1CF5A3B4002D7C01 /* ReaderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEA5B2B41CF5A43C002D7C01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEA5B2C21CF5A486002D7C01 /* ReaderConstants.m in Sources */,
+				CEA5B2C31CF5A486002D7C01 /* ReaderDocument.m in Sources */,
+				CEA5B2C41CF5A486002D7C01 /* ReaderViewController.m in Sources */,
+				CEA5B2C51CF5A486002D7C01 /* ReaderMainToolbar.m in Sources */,
+				CEA5B2C61CF5A486002D7C01 /* ReaderMainPagebar.m in Sources */,
+				CEA5B2C71CF5A486002D7C01 /* ReaderContentView.m in Sources */,
+				CEA5B2C81CF5A486002D7C01 /* ReaderContentPage.m in Sources */,
+				CEA5B2C91CF5A486002D7C01 /* ReaderContentTile.m in Sources */,
+				CEA5B2CA1CF5A486002D7C01 /* ThumbsViewController.m in Sources */,
+				CEA5B2CB1CF5A486002D7C01 /* ThumbsMainToolbar.m in Sources */,
+				CEA5B2CC1CF5A486002D7C01 /* CGPDFDocument.m in Sources */,
+				CEA5B2CD1CF5A486002D7C01 /* ReaderDocumentOutline.m in Sources */,
+				CEA5B2CE1CF5A486002D7C01 /* ReaderThumbRequest.m in Sources */,
+				CEA5B2CF1CF5A486002D7C01 /* ReaderThumbCache.m in Sources */,
+				CEA5B2D01CF5A486002D7C01 /* ReaderThumbQueue.m in Sources */,
+				CEA5B2D11CF5A486002D7C01 /* ReaderThumbFetch.m in Sources */,
+				CEA5B2D21CF5A486002D7C01 /* ReaderThumbRender.m in Sources */,
+				CEA5B2D31CF5A486002D7C01 /* ReaderThumbsView.m in Sources */,
+				CEA5B2D41CF5A486002D7C01 /* ReaderThumbView.m in Sources */,
+				CEA5B2D51CF5A486002D7C01 /* UIXToolbarView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEA5B2AF1CF5A3B4002D7C01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D6058900D05DD3D006BFB54 /* Reader */;
+			targetProxy = CEA5B2AE1CF5A3B4002D7C01 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4541A9D7122EA716001A5E60 /* Localizable.strings */ = {
@@ -671,6 +848,181 @@
 			};
 			name = Release;
 		};
+		CEA5B2B01CF5A3B4002D7C01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = ReaderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = at.billa.ReaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reader.app/Reader";
+			};
+			name = Debug;
+		};
+		CEA5B2B11CF5A3B4002D7C01 /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = ReaderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = at.billa.ReaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reader.app/Reader";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Testing;
+		};
+		CEA5B2B21CF5A3B4002D7C01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = ReaderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = at.billa.ReaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reader.app/Reader";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEA5B2BF1CF5A43C002D7C01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CEA5B2C01CF5A43C002D7C01 /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Testing;
+		};
+		CEA5B2C11CF5A43C002D7C01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -693,6 +1045,24 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		CEA5B2B31CF5A3B4002D7C01 /* Build configuration list for PBXNativeTarget "ReaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEA5B2B01CF5A3B4002D7C01 /* Debug */,
+				CEA5B2B11CF5A3B4002D7C01 /* Testing */,
+				CEA5B2B21CF5A3B4002D7C01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CEA5B2BE1CF5A43C002D7C01 /* Build configuration list for PBXNativeTarget "ReaderLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEA5B2BF1CF5A43C002D7C01 /* Debug */,
+				CEA5B2C01CF5A43C002D7C01 /* Testing */,
+				CEA5B2C11CF5A43C002D7C01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
