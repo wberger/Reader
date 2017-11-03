@@ -97,7 +97,7 @@
 		[doneButton addTarget:self action:@selector(doneButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 		[doneButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
 		[doneButton setBackgroundImage:buttonN forState:UIControlStateNormal];
-		doneButton.autoresizingMask = UIViewAutoresizingNone;
+		doneButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
 		//doneButton.backgroundColor = [UIColor grayColor];
 		doneButton.exclusiveTouch = YES;
 
@@ -123,7 +123,7 @@
 		showControl = [[UISegmentedControl alloc] initWithItems:buttonItems];
 		showControl.frame = CGRectMake(showControlX, BUTTON_Y, SHOW_CONTROL_WIDTH, BUTTON_HEIGHT);
 		showControl.tintColor = (useTint ? [UIColor blackColor] : [UIColor colorWithWhite:0.8f alpha:1.0f]);
-		showControl.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+		showControl.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
 		showControl.segmentedControlStyle = UISegmentedControlStyleBar;
 		showControl.selectedSegmentIndex = 0; // Default segment index
 		//showControl.backgroundColor = [UIColor grayColor];
@@ -145,7 +145,7 @@
 
 			titleLabel.textAlignment = NSTextAlignmentCenter;
 			titleLabel.font = [UIFont systemFontOfSize:TITLE_FONT_SIZE];
-			titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+			titleLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
 			titleLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
 			titleLabel.textColor = [UIColor colorWithWhite:0.0f alpha:1.0f];
 			titleLabel.backgroundColor = [UIColor clearColor];
