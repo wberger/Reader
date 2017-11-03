@@ -233,6 +233,18 @@
 	return YES;
 }
 
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    if (@available(iOS 11.0, *))
+    {
+        const CGFloat offset = CGRectGetMinY(self.view.safeAreaLayoutGuide.layoutFrame);
+        CGRect toolbarRect = mainToolbar.frame; toolbarRect.size.height = TOOLBAR_HEIGHT + offset;
+        mainToolbar.frame = toolbarRect;
+    }
+}
+
 /*
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {

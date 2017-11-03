@@ -81,7 +81,7 @@
 			lineView.autoresizesSubviews = NO;
 			lineView.userInteractionEnabled = NO;
 			lineView.contentMode = UIViewContentModeRedraw;
-			lineView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+			lineView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
 			lineView.backgroundColor = [UIColor colorWithWhite:0.64f alpha:0.94f];
 			[self addSubview:lineView];
 		}
