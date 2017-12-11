@@ -525,9 +525,14 @@
     
     if (@available(iOS 11.0, *))
     {
-        const CGFloat offset = CGRectGetMinY(self.view.safeAreaLayoutGuide.layoutFrame);
-        CGRect toolbarRect = mainToolbar.frame; toolbarRect.size.height = TOOLBAR_HEIGHT + offset;
+        const CGFloat offsetTop = CGRectGetMinY(self.view.safeAreaLayoutGuide.layoutFrame);
+        CGRect toolbarRect = mainToolbar.frame; toolbarRect.size.height = TOOLBAR_HEIGHT + offsetTop;
         mainToolbar.frame = toolbarRect;
+        
+        const CGFloat offsetBottom = CGRectGetHeight(self.view.bounds) - CGRectGetMaxY(self.view.safeAreaLayoutGuide.layoutFrame);
+        CGRect pagebarRect = mainPagebar.frame; pagebarRect.size.height = PAGEBAR_HEIGHT + offsetBottom;
+        pagebarRect.origin.y = CGRectGetHeight(self.view.bounds) - pagebarRect.size.height;
+        mainPagebar.frame = pagebarRect;
     }
 }
 

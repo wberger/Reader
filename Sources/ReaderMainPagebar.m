@@ -247,7 +247,14 @@
 
 - (void)layoutSubviews
 {
-	CGRect controlRect = CGRectInset(self.bounds, 4.0f, 0.0f);
+    UIEdgeInsets insets = UIEdgeInsetsMake(0.0f, 4.0f, 0.0f, 4.0f);
+    if (@available(iOS 11.0, *))
+    {
+        // consider the safe area
+        const CGFloat offsetBottom = CGRectGetHeight(self.bounds) - CGRectGetMaxY(self.safeAreaLayoutGuide.layoutFrame);
+        insets.bottom = offsetBottom;
+    }
+    CGRect controlRect = UIEdgeInsetsInsetRect(self.bounds, insets);
 
 	CGFloat thumbWidth = (THUMB_SMALL_WIDTH + THUMB_SMALL_GAP);
 
